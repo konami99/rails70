@@ -48,6 +48,9 @@ memory: 2048
 # secrets:                      # Pass secrets from AWS Systems Manager (SSM) Parameter Store and Secrets Manager.
 #   GITHUB_TOKEN: GITHUB_TOKEN  # The key is the name of the environment variable, the value is the name of an SSM parameter.
 
+secrets:
+  RAILS_MASTER_KEY: /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/RAILS_MASTER_KEY
+
 # You can override any of the values defined above by environment.
 # environments:
 #   test:
