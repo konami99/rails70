@@ -11,8 +11,11 @@ module Rails70
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.hosts = [
+      IPAddr.new("0.0.0.0/0"),
       "localhost",
       "ezyraise.ap.ngrok.io",
+      "nr3zkmzcqi.us-west-2.awsapprunner.com",
+      "rails-publi-ldf9q6di0j0l-331956805.us-west-2.elb.amazonaws.com",
       ENV["RAILS_PRODUCTION_HOST"]
     ]
     # Configuration for the application, engines, and railties goes here.
