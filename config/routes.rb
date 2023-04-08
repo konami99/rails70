@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   mount Sidekiq::Web => '/sidekiq'
 
+  resources :books, only: %i[index show]
+
   # Defines the root path route ("/")
   # root "articles#index"
   root "rails/welcome#index"
