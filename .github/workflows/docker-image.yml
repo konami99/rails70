@@ -8,6 +8,7 @@ jobs:
   copilot:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Install copilot
         run: |
           mkdir -p $GITHUB_WORKSPACE/bin
@@ -21,10 +22,4 @@ jobs:
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
 
       # sample use
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build the Docker image
-        run: |
-          copilot svc deploy --name webserver --env prod
+      - run: copilot svc deploy --name webserver --env prod
