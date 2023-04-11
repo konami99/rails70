@@ -21,4 +21,10 @@ jobs:
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
 
       # sample use
-      - run: copilot svc deploy --name webserver --env prod
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: |
+          copilot svc deploy --name webserver --env prod
