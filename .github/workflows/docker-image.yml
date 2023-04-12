@@ -7,7 +7,7 @@ on:
 jobs:
   copilot:
     runs-on: ubuntu-latest
-    environment: staging
+    environment: Staging
     steps:
       - name: Configure AWS Credentials for Staging
         uses: aws-actions/configure-aws-credentials@v1
