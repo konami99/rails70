@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Staging
     steps:
+      - uses: actions/checkout@v3
       - name: Configure AWS Credentials for Staging
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -31,7 +32,6 @@ jobs:
           # add to PATH
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
 
-      - uses: actions/checkout@v3
       - run: copilot --help
       #- run: copilot svc deploy --name webserver --env prod
       #  env:
