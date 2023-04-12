@@ -22,12 +22,6 @@ jobs:
           # add to PATH
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
 
-      - run: aws sts assume-role --role-arn arn:aws:iam::476985000721:role/GitHubDeploymentStaging --role-session-name "GitHubActions" --output json > assumed_role_credentials.json
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_TOOLS }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_TOOLS }}
-          AWS_REGION: us-west-2
-
       - name: Set up Copilot with assumed role credentials
         run: |
           copilot svc deploy --app rails70 --name webserver
