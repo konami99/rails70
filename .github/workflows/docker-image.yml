@@ -23,7 +23,7 @@ jobs:
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
 
       - name: staging migration
-        run: copilot svc exec -n webserver -e staging -a rails70 -c './bin/rails db:migrate RAILS_ENV=staging'
+        run: copilot svc exec -n webserver -e staging -a rails70 -c './bin/rails db:migrate RAILS_ENV=production'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_TOOLS }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_TOOLS }}
