@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :books, only: %i[index show]
 
+  resources :orders, only: %i[index show]
+
   # Defines the root path route ("/")
   # root "articles#index"
   root "rails/welcome#index"
