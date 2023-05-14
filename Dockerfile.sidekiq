@@ -65,4 +65,4 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD ["bundle", "exec", "sidekiq", "-C", "/rails/config/sidekiq_worker.yml"]
+CMD ["bundle", "exec", "sidekiq", "-t", "30", "-C", "/rails/config/sidekiq_worker.yml"]
